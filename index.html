@@ -1,809 +1,792 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <title></title>
     <style>
-      /* html {
+        /* html {
             cursor: url("http://ued.taobao.com/blog/wp-content/themes/taobaoued/images/cursor.ico"), auto;
         } */
-
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, Microsoft JhengHei, STHeiti, sans-serif;
-      }
-
-      body {
-        /* background: #6db564; */
-        background: #404040;
-        overflow-x: hidden;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      #main {
-        position: relative;
-        width: 360px;
-        height: 640px;
-        background: url("https://i.imgur.com/nHyy31F.jpg");
-        background-repeat: repeat-x;
-        background-position: top center;
-        background-size: cover;
-        margin: auto;
-      }
-
-      .cover {
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.6);
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        display: none;
-      }
-
-      .cover h3 {
-        font-size: 60px;
-        color: #fff;
-        margin: 0 0 40px;
-        text-align: center;
-        font-weight: bold;
-        line-height: 1;
-      }
-
-      .cover h2 {
-        font-size: 160px;
-        color: #f0b42d;
-        font-weight: bold;
-        margin: 0;
-        text-align: center;
-        line-height: 1;
-      }
-
-      .cover h5 {
-        font-size: 24px;
-        /* font-size: 5vmin ; */
-        color: #fff;
-        margin: 0;
-        line-height: 1;
-      }
-
-      .cover .flex {
-        display: flex;
-        justify-content: center;
-        align-items: baseline;
-      }
-
-      .cover .ranking {
-        margin-top: 1vmin;
-      }
-      .cover .btn {
-        display: block;
-      }
-      .cover .btn img {
-        width: 320px;
-        height: auto;
-      }
-      .cover .home_btn {
-        margin-top: 6vmin;
-      }
-
-      .load {
-        background: #000;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .load .text {
-        width: 150px;
-      }
-
-      .load .flex {
-        display: flex;
-        align-items: baseline;
-      }
-
-      .load h2 {
-        font-size: 120px;
-        color: #f0b42d;
-        font-weight: bold;
-        margin: 0;
-        text-align: center;
-        line-height: 1;
-      }
-
-      .load h5 {
-        font-size: 18px;
-        margin: 0;
-      }
-
-      .load h3 {
-        font-size: 32px;
-        margin: 0 0 20px;
-        text-align: center;
-        font-weight: bold;
-        line-height: 1;
-      }
-
-      .interface {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 140px;
-        background: #f0b42d;
-        /* padding: 5px;
+        
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Microsoft JhengHei, STHeiti, sans-serif;
+        }
+        
+        body {
+            /* background: #6db564; */
+            background: #404040;
+            overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #main {
+            position: relative;
+            width: 360px;
+            height: 640px;
+            background: url('./img/bg.svg');
+            background-repeat: repeat-x;
+            background-position: top center;
+            background-size: cover;
+            margin: auto;
+        }
+        
+        .cover {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .6);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        
+        .cover h3 {
+            font-size: 60px;
+            color: #fff;
+            margin: 0 0 40px;
+            text-align: center;
+            font-weight: bold;
+            line-height: 1;
+        }
+        
+        .cover h2 {
+            font-size: 160px;
+            color: #F0B42D;
+            font-weight: bold;
+            margin: 0;
+            text-align: center;
+            line-height: 1;
+        }
+        
+        .cover h5 {
+            font-size: 24px;
+            /* font-size: 5vmin ; */
+            color: #fff;
+            margin: 0;
+            line-height: 1;
+        }
+        
+        .cover .flex {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+        }
+        
+        .cover .ranking {
+            margin-top: 1vmin
+        }
+        
+        .cover .home_btn {
+            margin-top: 6vmin;
+        }
+        
+        .load {
+            background: #000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .load .text {
+            width: 150px;
+        }
+        
+        .load .flex {
+            display: flex;
+            align-items: baseline;
+        }
+        
+        .load h2 {
+            font-size: 120px;
+            color: #F0B42D;
+            font-weight: bold;
+            margin: 0;
+            text-align: center;
+            line-height: 1;
+        }
+        
+        .load h5 {
+            font-size: 18px;
+            margin: 0;
+        }
+        
+        .load h3 {
+            font-size: 32px;
+            margin: 0 0 20px;
+            text-align: center;
+            font-weight: bold;
+            line-height: 1;
+        }
+        
+        .interface {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 140px;
+            background: #F0B42D;
+            /* padding: 5px;
             border: 10px solid #705139;
             border-radius: 14px; */
-        padding: 2px;
-        border: 3px solid #705139;
-        border-radius: 3px;
-        display: none;
-      }
-
-      .interface .allScore {
-        padding: 3px;
-        background: #f9ebcf;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .interface .allScore img {
-        height: 18px;
-      }
-
-      .interface .allScore h4 {
-        font-size: 18px;
-        color: #705139;
-        font-weight: bold;
-        margin: 0;
-        line-height: 1.2;
-      }
-
-      .interface .progress {
-        background: #705139;
-        padding: 3px 2px;
-      }
-
-      .interface .time {
-        position: relative;
-        height: 10px;
-      }
-
-      .interface .bar {
-        background: #e05c5c;
-        position: absolute;
-        right: 0;
-        width: 100%;
-        height: 10px;
-      }
-
-      .interface small {
-        position: absolute;
-        font-size: 12px;
-        color: #fff;
-        right: 3px;
-        top: -2px;
-      }
-
-      .start {
-        width: 280px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 4vh;
-      }
-      .start .logo img {
-        width: 100%;
-        height: auto;
-      }
-      .start .button {
-        margin-top: 21vh;
-        margin-left: 20px;
-        margin-right: 20px;
-        cursor: pointer;
-      }
-      .start .button img {
-        width: 100%;
-        height: auto;
-      }
-
-      .start .button + .button {
-        margin-top: 8px;
-      }
-
-      .over {
-        display: none;
-      }
-
-      .hit {
-        /* width: 100vw; */
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        box-sizing: border-box;
-        padding: 0 20px;
-        position: relative;
-        top: 185px;
-        /* top: calc((100% - 1000px)/2);
+            padding: 2px;
+            border: 3px solid #705139;
+            border-radius: 3px;
+            display: none;
+        }
+        
+        .interface .allScore {
+            padding: 3px;
+            background: #F9EBCF;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .interface .allScore img {
+            height: 18px;
+        }
+        
+        .interface .allScore h4 {
+            font-size: 18px;
+            color: #705139;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+        .interface .progress {
+            background: #705139;
+            padding: 3px 2px;
+        }
+        
+        .interface .time {
+            position: relative;
+            height: 10px;
+        }
+        
+        .interface .bar {
+            background: #E05C5C;
+            position: absolute;
+            right: 0;
+            width: 100%;
+            height: 10px;
+        }
+        
+        .interface small {
+            position: absolute;
+            font-size: 12px;
+            color: #fff;
+            right: 3px;
+            top: -2px;
+        }
+        
+        .start {
+            width: 280px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 4vh;
+        }
+        
+        .start .button {
+            margin-top: 21vh;
+            margin-left: 20px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        
+        .start .button+.button {
+            margin-top: 8px;
+        }
+        
+        .over {
+            display: none;
+        }
+        
+        .hit {
+            /* width: 100vw; */
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            padding: 0 20px;
+            position: relative;
+            top: 185px;
+            /* top: calc((100% - 1000px)/2);
             height: 65vh; */
-      }
-
-      .hit .hitDiv {
-        width: 30%;
-        position: relative;
-        cursor: pointer;
-        /* cursor: url("./img/cursor.ico"), auto; */
-      }
-
-      .hit .hitDiv:nth-child(3n-1) .hitImg {
-        /* margin-bottom: 8vmin; */
-        margin-bottom: 35px;
-      }
-
-      .hit .text {
-        font-size: 20px;
-        font-weight: bold;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        text-align: center;
-        display: none;
-      }
-
-      .hitImg {
-        /* width: 170px;
+        }
+        
+        .hit .hitDiv {
+            width: 30%;
+            position: relative;
+            cursor: pointer;
+            /* cursor: url("./img/cursor.ico"), auto; */
+        }
+        
+        .hit .hitDiv:nth-child(3n-1) .hitImg {
+            /* margin-bottom: 8vmin; */
+            margin-bottom: 35px;
+        }
+        
+        .hit .text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            text-align: center;
+            display: none;
+        }
+        
+        .hitImg {
+            /* width: 170px;
             height: 170px;
             background-size: 1700px 340px; */
-        /* width: 85px;
+            /* width: 85px;
             height: 85px;
             background-size: 810px 170px; */
-        background-repeat: no-repeat;
-        background-position: 0 0;
-        margin: auto;
-        overflow: hidden;
-        position: relative;
-        /* cursor: pointer; */
-      }
-
-      .hitImg > img {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-
-      .effects {
-        position: absolute;
-        top: 0;
-        left: 0;
-        /* width: 100vw;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            /* cursor: pointer; */
+        }
+        
+        .hitImg>img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .effects {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* width: 100vw;
             height: 100vh; */
-        box-shadow: inset 0 0 40px 0 red;
-        pointer-events: none;
-        animation: opacity 0.3s ease-in-out infinite;
-        display: none;
-        width: 360px;
-        height: 640px;
-      }
-
-      @keyframes opacity {
-        from {
-          opacity: 0;
+            box-shadow: inset 0 0 40px 0 red;
+            pointer-events: none;
+            animation: opacity .3s ease-in-out infinite;
+            display: none;
+            width: 360px;
+            height: 640px;
         }
-        to {
-          opacity: 1;
+        
+        @keyframes opacity {
+            from {
+                opacity: 0
+            }
+            to {
+                opacity: 1
+            }
         }
-      }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="main">
-      <div class="hit">
-        <div class="hitDiv">
-          <div class="hitImg" id="hitImg"></div>
-          <div class="text">0</div>
+        <div class="hit">
+            <div class="hitDiv">
+                <div class="hitImg" id="hitImg"></div>
+                <div class="text">0</div>
+            </div>
+            <div class="hitDiv">
+                <div class="hitImg"></div>
+                <div class="text">0</div>
+            </div>
+            <div class="hitDiv">
+                <div class="hitImg"></div>
+                <div class="text">0</div>
+            </div>
+            <div class="hitDiv">
+                <div class="hitImg"></div>
+                <div class="text">0</div>
+            </div>
+            <div class="hitDiv">
+                <div class="hitImg"></div>
+                <div class="text">0</div>
+            </div>
+            <div class="hitDiv">
+                <div class="hitImg"></div>
+                <div class="text">0</div>
+            </div>
+            <div class="hitDiv">
+                <div class="hitImg"></div>
+                <div class="text">0</div>
+            </div>
+            <div class="hitDiv">
+                <div class="hitImg"></div>
+                <div class="text">0</div>
+            </div>
+            <div class="hitDiv">
+                <div class="hitImg"></div>
+                <div class="text">0</div>
+            </div>
         </div>
-        <div class="hitDiv">
-          <div class="hitImg"></div>
-          <div class="text">0</div>
+        <div class="interface">
+            <div class="allScore">
+                <img src="./img/star.svg" alt="">
+                <h4 class="text">0</h4>
+            </div>
+            <div class="progress">
+                <div class="time">
+                    <div class="bar"></div>
+                    <small class="text">0</small>
+                </div>
+            </div>
         </div>
-        <div class="hitDiv">
-          <div class="hitImg"></div>
-          <div class="text">0</div>
-        </div>
-        <div class="hitDiv">
-          <div class="hitImg"></div>
-          <div class="text">0</div>
-        </div>
-        <div class="hitDiv">
-          <div class="hitImg"></div>
-          <div class="text">0</div>
-        </div>
-        <div class="hitDiv">
-          <div class="hitImg"></div>
-          <div class="text">0</div>
-        </div>
-        <div class="hitDiv">
-          <div class="hitImg"></div>
-          <div class="text">0</div>
-        </div>
-        <div class="hitDiv">
-          <div class="hitImg"></div>
-          <div class="text">0</div>
-        </div>
-        <div class="hitDiv">
-          <div class="hitImg"></div>
-          <div class="text">0</div>
-        </div>
-      </div>
-      <div class="interface">
-        <div class="allScore">
-          <img src="./img/star.svg" alt="" />
-          <h4 class="text">0</h4>
-        </div>
-        <div class="progress">
-          <div class="time">
-            <div class="bar"></div>
-            <small class="text">0</small>
-          </div>
-        </div>
-      </div>
-      <div class="start">
-        <!-- <div class="logo"><img src="./img/logo.svg" alt=""></div>
+        <div class="start">
+            <!-- <div class="logo"><img src="./img/logo.svg" alt=""></div>
             <div class="button"><img src="./img/starBtn.svg" alt=""></div>
             <div class="button"><img src="./img/btnranking.svg" alt=""></div> -->
-        <div class="logo"></div>
-        <div class="button"></div>
-        <div class="button"></div>
-      </div>
-      <div class="cover">
-        <div class="over">
-          <div class="title">
-            <h3>Game Over</h3>
-          </div>
-          <div class="scoring">
-            <h5>總分</h5>
-            <div class="flex">
-              <h2>0</h2>
-              <h5>分</h5>
-            </div>
-          </div>
-          <a class="home_btn btn" href="index.html"></a>
-          <a class="ranking btn" href="index.html"></a>
+            <div class="logo"></div>
+            <div class="button"></div>
+            <div class="button"></div>
         </div>
-      </div>
-      <div class="load">
-        <div class="text">
-          <div class="number">
-            <div class="flex">
-              <h2>0</h2>
-              <h5>%</h5>
+        <div class="cover">
+            <div class="over">
+                <div class="title">
+                    <h3>Game Over</h3>
+                </div>
+                <div class="scoring">
+                    <h5>總分</h5>
+                    <div class="flex">
+                        <h2>0</h2>
+                        <h5>分</h5>
+                    </div>
+                </div>
+                <a class="home_btn btn" href="index.html"></a>
+                <a class="ranking btn" href="index.html"></a>
             </div>
-          </div>
-          <div class="title">
-            <h3>LOADING</h3>
-          </div>
         </div>
-      </div>
-      <div class="effects"></div>
-      <!-- <audio class='bgm' src="source/game_music.mp3" autoplay="autoplay" loop="loop"></audio>
+        <div class="load">
+            <div class="text">
+                <div class="number">
+                    <div class="flex">
+                        <h2>0</h2>
+                        <h5>%</h5>
+                    </div>
+                </div>
+                <div class="title">
+                    <h3>LOADING</h3>
+                </div>
+            </div>
+        </div>
+        <div class="effects"></div>
+        <!-- <audio class='bgm' src="source/game_music.mp3" autoplay="autoplay" loop="loop"></audio>
         <audio class='gameover_bgm' src="source/game_over.mp3" autoplay="autoplay"></audio>
         <audio class='up_bgm' src="source/bullet.mp3" autoplay="autoplay"></audio> -->
-      <!-- <audio class='up_bgm' src="source/sfx_point.ogg" autoplay="autoplay"></audio> -->
+        <!-- <audio class='up_bgm' src="source/sfx_point.ogg" autoplay="autoplay"></audio> -->
     </div>
-  </body>
-  <script>
+</body>
+<script>
     function starGame(imgs) {
-      //建立cookie
-      function setCookie(name, value, days, path) {
-        if (days) {
-          var date = new Date();
-          date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-          var expires = "; expires=" + date.toGMTString();
-        } else var expires = "";
-        document.cookie = name + "=" + value + expires + "; path=/";
-      }
-      //讀取cookie
-      function getCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(";");
-        for (var i = 0; i < ca.length; i++) {
-          var c = ca[i];
-          while (c.charAt(0) == " ") c = c.substring(1, c.length);
-          if (c.indexOf(nameEQ) == 0)
-            return c.substring(nameEQ.length, c.length);
+        //建立cookie
+        function setCookie(name, value, days, path) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
+            } else var expires = "";
+            document.cookie = name + "=" + value + expires + "; path=/";
         }
-        return null;
-      }
-      //刪除cookie
-      function deletCookie(name) {
-        createCookie(name, "", -1);
-      }
-      // setCookie('showadv', "some value", 3); //建立
-      // aa = getCookie('showadv'); //讀取
-      // eraseCookie('showadv'); //刪除
-      // console.log(aa);
-
-      //遊戲時間
-      var time = getCookie("time") || 20;
-      //一般出現次數
-      var generalShow = getCookie("generalShow") || 20;
-      //特殊出現次數
-      var specialShow = getCookie("specialShow") || 1;
-      //一般得分
-      var generalScore = getCookie("generalScore") || 10;
-      //特殊得分
-      var specialScore = getCookie("specialScore") || 20;
-      //背景圖
-      var baImage = imgs.bg;
-      //角色圖
-      var CharacterImage = imgs.Character;
-      //遊戲分數
-      var gameScore = 0;
-      //時間bar
-      var timeBar = 100;
-      var timeBarEqual = timeBar / time;
-      var timeBarNow = 0;
-      //角色速度
-      var CharacterTime = 80;
-      var CharacterTimeLast = 50;
-      //角色停滯速度
-      var CharacterStagnationTime = 500;
-      var CharacterStagnationTimeLast = 200;
-      //倒數5秒
-      var lastTime = 5;
-      //開始計時器
-      var startTimer = null;
-      //出現計時器
-      var upTimer = null;
-      //向下計時器
-      var downTimer_ = null;
-      //初始圖片；
-      var imgNum = -1;
-      //圖片總張數
-      var imgNnumber = 8; //0-9
-      //亂數
-      var rand = 0,
-        rand1 = 0;
-      //次數
-      var frequency = 0,
-        rand1V = 0;
-      //防止重复击打；
-      var hah = 0;
-      //img
-      // var imgMw = '';//1700
-      // var imgMh = '';//3400
-      // var imgW = '';//1700
-      // var imgH = '';//1700
-
-      var $main = document.getElementById("main");
-      var $hitImg = $main.querySelectorAll(".hitImg");
-      var $hitDiv = $main.querySelector(".hitDiv");
-      var $interface = $main.querySelector(".interface");
-      var $hitImgText = $main.querySelectorAll(".hitImg+.text");
-      var $score = $main.querySelector(".allScore>.text");
-      var $timeBar = $main.querySelector(".bar");
-      var $timeText = $main.querySelector(".time>.text");
-      var $cover = $main.querySelector(".cover");
-      var $start = $main.querySelector(".start");
-      var $logo = $start.querySelector(".logo");
-      var $starButton = $start.querySelectorAll(".button");
-      var $startNumber = $start.querySelector(".number>h2");
-      var $over = $cover.querySelector(".over");
-      var $overNumber = $over.querySelector(".scoring h2");
-      var $effects = $main.querySelector(".effects");
-      var $hiddenBtn = $main.querySelector("#hiddenBtn");
-      var $btn = $main.querySelectorAll(".btn");
-      var imgW = $hitDiv.offsetWidth;
-      $logo.appendChild(imgs.logo);
-      $starButton[0].appendChild(imgs.starBtn);
-      var btnranking = imgs.btnranking.cloneNode(true);
-      $starButton[1].appendChild(btnranking);
-      $btn[0].appendChild(imgs.btnhome);
-      $btn[1].appendChild(imgs.btnranking);
-      // var bgm = document.querySelector(".bgm")
-      // var gameoverBgm = document.querySelector(".gameover_bgm")
-      // var upBgm = document.querySelector(".up_bgm")
-      //音樂關閉
-      imgs.audioBg.pause();
-      imgs.audioOver.pause();
-      imgs.audioUp.pause();
-
-      for (var i = 0; i < $hitImg.length; i++) {
-        // $hitImg[i].style.backgroundImage = 'url(' + imgs.CharacterImage + ')';
-        // $hitImg[i].style.backgroundSize = imgW * 10 + 'px ' + imgW * 2 + 'px';
-        $hitImg[i].style.width = imgW + "px";
-        $hitImg[i].style.height = imgW + "px";
-        // $hitImg[i].style.objectFit = 'none';
-        // $hitImg[i].style.objectPosition = '0 0';
-        let Character = imgs.Character.cloneNode(true);
-        $hitImg[i].appendChild(Character);
-        var img = $hitImg[i].querySelector("img");
-        img.style.width = imgW * 10 + "px";
-        img.style.height = imgW * 2 + "px";
-        $hitImg[i].setAttribute("data", i);
-        $hitImg[i].onclick = function () {
-          imgs.audioUp.play();
-          var data = this.getAttribute("data");
-          hah++;
-          if (data == rand && hah == 1) {
-            console.log("觸及i:" + data);
-            click(this);
-          } else {
-            console.log("無觸及i:");
-          }
-        };
-      }
-
-      function random_() {
-        frequency++;
-        rand = parseInt(Math.random() * 9); //0-8
-        rand1 = parseInt(Math.random() * 2); //0-1
-        console.log("-----------------------------");
-        console.log("次數:" + frequency);
-        // console.log('rand:'+rand,'rand1:'+rand1)
-        //特別次數++
-        if (rand1 == 1) {
-          rand1V++;
-        }
-        //特別次數跑完
-        if (rand1V > specialShow) {
-          rand1 = 0;
-        }
-        //一般次數跑完特別次數未跑完
-        if (frequency > generalShow - specialShow && rand1V < specialShow) {
-          rand1V++;
-          rand1 = 1;
-        }
-        //跑完總次數
-        if (frequency > generalShow + specialShow) {
-          rand = -1;
-          rand1 = 0;
-        }
-        if (rand1 == 1) {
-          console.log("特殊角色:" + rand1);
-        } else {
-          console.log("一般角色:" + rand);
-        }
-        console.log("rand1:" + rand1 + " ,rand:" + rand);
-      }
-
-      function up() {
-        console.log("up:");
-        var h_num = 5;
-        hah = 0;
-        upTimer = setInterval(function () {
-          imgNum++;
-          hitImg = $hitImg[rand].querySelector("img");
-          if (imgNum < h_num) {
-            // if (rand > -1) $hitImg[rand].style.backgroundPosition = -imgNum * imgW + 'px ' + -rand1 * imgW + 'px';
-            if (rand > -1) {
-              console.log(-imgNum * imgW);
-              console.log(-rand1 * imgW);
-              hitImg.style.left = -imgNum * imgW + "px ";
-              hitImg.style.top = -rand1 * imgW + "px";
+        //讀取cookie
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
             }
-          } else {
-            clearInterval(upTimer);
-            //停留一段时间在下去。
-            setTimeout(function () {
-              down();
-            }, CharacterStagnationTime);
-          }
-        }, CharacterTime);
-      }
-
-      function down(o) {
-        console.log("down:");
-        downTimer_ = setInterval(function () {
-          imgNum--;
-          hitImg = $hitImg[rand].querySelector("img");
-          if (imgNum > -1) {
-            // if (rand > -1) $hitImg[rand].style.backgroundPosition = -imgNum * imgW + 'px ' + -rand1 * imgW + 'px';
-            if (rand > -1) {
-              hitImg.style.left = -imgNum * imgW + "px ";
-              hitImg.style.top = -rand1 * imgW + "px";
-            }
-          } else {
-            scoreTextClose();
-            clearInterval(downTimer_);
-            setTimeout(function () {
-              imgNum = 0;
-              clearTimer();
-              progressTimer();
-              random_();
-              up();
-            }, 100);
-          }
-        }, CharacterTime);
-      }
-
-      function progressTimer() {
-        console.log("progressTimer:");
-        setInterval(function () {
-          time--;
-          timeBarNow = timeBarNow + timeBarEqual;
-          $timeBar.style.width = timeBar - timeBarNow + "%";
-          $timeText.innerHTML = time + "s"; //顯示時間
-          console.log("倒數時間:" + time);
-          if (time == lastTime) {
-            //倒數5秒
-            CharacterTime = CharacterTimeLast;
-            CharacterStagnationTime = CharacterStagnationTimeLast;
-            $effects.style.display = "block";
-          }
-          if (time <= 0) {
-            //遊戲結束
-            imgs.audioBg.pause();
-            imgs.audioOver.play();
-            clearTimer();
-            $timeBar.style.width = "0%";
-            $cover.style.display = "flex";
-            $over.style.display = "block";
-            $effects.style.display = "none";
-            $overNumber.innerHTML = gameScore;
-          }
-        }, 800);
-      }
-
-      function click(o) {
-        var obj = o.nextElementSibling;
-        obj.style.display = "block";
-        imgNum = imgNnumber;
-        if (rand1 == "1") {
-          //判斷是否特殊
-          gameScore += specialScore;
-          obj.innerHTML = "+" + specialScore;
-          console.log("觸及分數:" + generalScore);
-        } else {
-          gameScore += generalScore;
-          obj.innerHTML = "+" + generalScore;
-          console.log("觸及分數:" + generalScore);
+            return null;
         }
-        console.log("總分數:" + gameScore);
-        $score.innerHTML = gameScore;
-        down(o);
-      }
-
-      function scoreTextClose() {
-        console.log("scoreTextClose:");
-        for (var i = 0; i < $hitImgText.length; i++) {
-          $hitImgText[i].style.display = "";
-          $hitImgText[i].innerHTML = "0";
+        //刪除cookie
+        function deletCookie(name) {
+            createCookie(name, "", -1);
         }
+        // setCookie('showadv', "some value", 3); //建立
+        // aa = getCookie('showadv'); //讀取
+        // eraseCookie('showadv'); //刪除
+        // console.log(aa);
+
+        //遊戲時間
+        var time = getCookie('time') || 20;
+        //一般出現次數
+        var generalShow = getCookie('generalShow') || 20;
+        //特殊出現次數
+        var specialShow = getCookie('specialShow') || 1;
+        //一般得分
+        var generalScore = getCookie('generalScore') || 10;
+        //特殊得分
+        var specialScore = getCookie('specialScore') || 20;
+        //背景圖
+        var baImage = imgs.bg;
+        //角色圖
+        var CharacterImage = imgs.Character;
+        //遊戲分數
+        var gameScore = 0;
+        //時間bar
+        var timeBar = 100;
+        var timeBarEqual = timeBar / time;
+        var timeBarNow = 0
+            //角色速度
+        var CharacterTime = 80;
+        var CharacterTimeLast = 50;
+        //角色停滯速度
+        var CharacterStagnationTime = 500;
+        var CharacterStagnationTimeLast = 200;
+        //倒數5秒
+        var lastTime = 5;
+        //開始計時器
+        var startTimer = null;
+        //出現計時器
+        var upTimer = null;
+        //向下計時器
+        var downTimer_ = null;
+        //初始圖片；
+        var imgNum = -1;
+        //圖片總張數
+        var imgNnumber = 8; //0-9
+        //亂數
+        var rand = 0,
+            rand1 = 0;
+        //次數
+        var frequency = 0,
+            rand1V = 0;
+        //防止重复击打；
+        var hah = 0;
+        //img
+        // var imgMw = '';//1700
+        // var imgMh = '';//3400
+        // var imgW = '';//1700
+        // var imgH = '';//1700
+
+
+        var $main = document.getElementById("main");
+        var $hitImg = $main.querySelectorAll(".hitImg");
+        var $hitDiv = $main.querySelector(".hitDiv");
+        var $interface = $main.querySelector(".interface");
+        var $hitImgText = $main.querySelectorAll(".hitImg+.text");
+        var $score = $main.querySelector(".allScore>.text");
+        var $timeBar = $main.querySelector(".bar");
+        var $timeText = $main.querySelector(".time>.text");
+        var $cover = $main.querySelector(".cover");
+        var $start = $main.querySelector(".start");
+        var $logo = $start.querySelector('.logo');
+        var $starButton = $start.querySelectorAll('.button');
+        var $startNumber = $start.querySelector(".number>h2");
+        var $over = $cover.querySelector(".over");
+        var $overNumber = $over.querySelector(".scoring h2");
+        var $effects = $main.querySelector('.effects');
+        var $hiddenBtn = $main.querySelector('#hiddenBtn');
+        var $btn = $main.querySelectorAll('.btn');
+        var imgW = $hitDiv.offsetWidth;
+        $logo.appendChild(imgs.logo)
+        $starButton[0].appendChild(imgs.starBtn)
+        var btnranking = imgs.btnranking.cloneNode(true)
+        $starButton[1].appendChild(btnranking)
+        $btn[0].appendChild(imgs.btnhome)
+        $btn[1].appendChild(imgs.btnranking)
+            // var bgm = document.querySelector(".bgm")
+            // var gameoverBgm = document.querySelector(".gameover_bgm")
+            // var upBgm = document.querySelector(".up_bgm")
+            //音樂關閉
+        imgs.audioBg.pause();
+        imgs.audioOver.pause()
+        imgs.audioUp.pause();
+
         for (var i = 0; i < $hitImg.length; i++) {
-          $hitImg[i].style.backgroundPosition = "0 0";
+            // $hitImg[i].style.backgroundImage = 'url(' + imgs.CharacterImage + ')';
+            // $hitImg[i].style.backgroundSize = imgW * 10 + 'px ' + imgW * 2 + 'px';
+            $hitImg[i].style.width = imgW + 'px';
+            $hitImg[i].style.height = imgW + 'px';
+            // $hitImg[i].style.objectFit = 'none';
+            // $hitImg[i].style.objectPosition = '0 0';
+            let Character = imgs.Character.cloneNode(true)
+            $hitImg[i].appendChild(Character)
+            var img = $hitImg[i].querySelector('img')
+            img.style.width = imgW * 10 + 'px';
+            img.style.height = imgW * 2 + 'px';
+            $hitImg[i].setAttribute('data', i);
+            $hitImg[i].onclick = function() {
+                imgs.audioUp.play();
+                var data = this.getAttribute('data');
+                hah++;
+                if (data == rand && hah == 1) {
+                    console.log('觸及i:' + data);
+                    click(this)
+                } else {
+                    console.log('無觸及i:');
+                }
+            }
         }
-      }
 
-      function clearTimer() {
-        console.log("clearTimer:");
-        var timer = setInterval(function () {}, 1);
-        for (var i = 0; i < timer; i++) {
-          clearInterval(i);
+        function random_() {
+            frequency++;
+            rand = parseInt(Math.random() * 9); //0-8
+            rand1 = parseInt(Math.random() * 2); //0-1
+            console.log('-----------------------------');
+            console.log('次數:' + frequency);
+            // console.log('rand:'+rand,'rand1:'+rand1)
+            //特別次數++
+            if (rand1 == 1) {
+                rand1V++;
+            }
+            //特別次數跑完
+            if (rand1V > specialShow) {
+                rand1 = 0;
+            }
+            //一般次數跑完特別次數未跑完
+            if (frequency > generalShow - specialShow && rand1V < specialShow) {
+                rand1V++;
+                rand1 = 1;
+            }
+            //跑完總次數
+            if (frequency > generalShow + specialShow) {
+                rand = -1;
+                rand1 = 0;
+            }
+            if (rand1 == 1) {
+                console.log('特殊角色:' + rand1)
+            } else {
+                console.log('一般角色:' + rand)
+            }
+            console.log('rand1:' + rand1 + ' ,rand:' + rand)
         }
-      }
 
-      function star() {
-        // var startNumber = '3';//倒數秒數
-        // // $timeText.innerHTML= time;//顯示時間
-        // $main.style.backgroundImage = 'url('+baImage+')';
-        // $timeText.innerHTML= time+'s';//顯示時間
-        // //
-        // imgW = $hitDiv.offsetWidth;
-        // console.log(imgW);
-        // for (var i = 0; i < $hitImg.length; i++) {
-        //     $hitImg[i].style.backgroundImage = 'url('+CharacterImage+')';
-        //     $hitImg[i].style.backgroundSize = imgW*10+'px '+imgW*2+'px';
-        //     $hitImg[i].style.width = imgW+'px';
-        //     $hitImg[i].style.height = imgW+'px';
-        //     $hitImg[i].setAttribute('data',i);
-        //     $hitImg[i].onclick = function() {
-        //         bgm.play();
-        //         upBgm.play();
-        //         var data = this.getAttribute('data');
-        //         hah++;
-        //         if(data == rand && hah == 1){
-        //             console.log('觸及i:'+ data);
-        //             click(this)
-        //         }else{
-        //             console.log('無觸及i:');
-        //         }
-        //     }
-        // }
-        // startTimer = setInterval(function() {
-        //     if (startNumber > 1) {
-        //         startNumber--;
-        //         $startNumber.innerHTML = startNumber;
-        //     } else {
-        //         clearInterval(startTimer);
-        //         $cover.style.display='none';
-        //         $start.style.display='none';
-        //         random_();
-        //         up();
-        //         progressTimer();
-        //     }
-        // },800);
+        function up() {
+            console.log('up:')
+            var h_num = 5;
+            hah = 0;
+            upTimer = setInterval(function() {
+                imgNum++;
+                hitImg = $hitImg[rand].querySelector('img')
+                if (imgNum < h_num) {
+                    // if (rand > -1) $hitImg[rand].style.backgroundPosition = -imgNum * imgW + 'px ' + -rand1 * imgW + 'px';
+                    if (rand > -1) {
+                        console.log(-imgNum * imgW)
+                        console.log(-rand1 * imgW)
+                        hitImg.style.left = -imgNum * imgW + 'px '
+                        hitImg.style.top = -rand1 * imgW + 'px';
+                    }
+                } else {
+                    clearInterval(upTimer);
+                    //停留一段时间在下去。
+                    setTimeout(function() {
+                        down();
+                    }, CharacterStagnationTime)
+                }
+            }, CharacterTime)
+        }
 
-        $timeText.innerHTML = time + "s"; //顯示時間
-        $start.style.display = "none";
-        $interface.style.display = "block";
-        random_();
-        up();
-        progressTimer();
-      }
-      $starButton[0].addEventListener("click", function () {
-        imgs.audioBg.play();
-        star();
-      });
+        function down(o) {
+            console.log('down:')
+            downTimer_ = setInterval(function() {
+                imgNum--;
+                hitImg = $hitImg[rand].querySelector('img')
+                if (imgNum > -1) {
+                    // if (rand > -1) $hitImg[rand].style.backgroundPosition = -imgNum * imgW + 'px ' + -rand1 * imgW + 'px';
+                    if (rand > -1) {
+                        hitImg.style.left = -imgNum * imgW + 'px '
+                        hitImg.style.top = -rand1 * imgW + 'px';
+
+                    }
+                } else {
+                    scoreTextClose();
+                    clearInterval(downTimer_);
+                    setTimeout(function() {
+                        imgNum = 0;
+                        clearTimer();
+                        progressTimer();
+                        random_();
+                        up();
+                    }, 100);
+                }
+            }, CharacterTime)
+        }
+
+        function progressTimer() {
+            console.log('progressTimer:')
+            setInterval(function() {
+                time--;
+                timeBarNow = timeBarNow + timeBarEqual;
+                $timeBar.style.width = timeBar - timeBarNow + '%';
+                $timeText.innerHTML = time + 's'; //顯示時間
+                console.log('倒數時間:' + time)
+                if (time == lastTime) { //倒數5秒
+                    CharacterTime = CharacterTimeLast;
+                    CharacterStagnationTime = CharacterStagnationTimeLast;
+                    $effects.style.display = 'block';
+                }
+                if (time <= 0) { //遊戲結束
+                    imgs.audioBg.pause();
+                    imgs.audioOver.play();
+                    clearTimer();
+                    $timeBar.style.width = '0%';
+                    $cover.style.display = 'flex';
+                    $over.style.display = 'block';
+                    $effects.style.display = 'none';
+                    $overNumber.innerHTML = gameScore;
+                }
+            }, 800)
+        }
+
+        function click(o) {
+            var obj = o.nextElementSibling;
+            obj.style.display = 'block';
+            imgNum = imgNnumber;
+            if (rand1 == '1') { //判斷是否特殊
+                gameScore += specialScore;
+                obj.innerHTML = '+' + specialScore;
+                console.log('觸及分數:' + generalScore);
+            } else {
+                gameScore += generalScore;
+                obj.innerHTML = '+' + generalScore;
+                console.log('觸及分數:' + generalScore);
+            }
+            console.log('總分數:' + gameScore);
+            $score.innerHTML = gameScore;
+            down(o);
+        }
+
+        function scoreTextClose() {
+            console.log('scoreTextClose:')
+            for (var i = 0; i < $hitImgText.length; i++) {
+                $hitImgText[i].style.display = '';
+                $hitImgText[i].innerHTML = '0';
+            }
+            for (var i = 0; i < $hitImg.length; i++) {
+                $hitImg[i].style.backgroundPosition = '0 0';
+            }
+        }
+
+        function clearTimer() {
+            console.log('clearTimer:')
+            var timer = setInterval(function() {}, 1);
+            for (var i = 0; i < timer; i++) {
+                clearInterval(i);
+            }
+        }
+
+        function star() {
+            // var startNumber = '3';//倒數秒數
+            // // $timeText.innerHTML= time;//顯示時間
+            // $main.style.backgroundImage = 'url('+baImage+')';
+            // $timeText.innerHTML= time+'s';//顯示時間
+            // //
+            // imgW = $hitDiv.offsetWidth;
+            // console.log(imgW);
+            // for (var i = 0; i < $hitImg.length; i++) {
+            //     $hitImg[i].style.backgroundImage = 'url('+CharacterImage+')';
+            //     $hitImg[i].style.backgroundSize = imgW*10+'px '+imgW*2+'px';
+            //     $hitImg[i].style.width = imgW+'px';
+            //     $hitImg[i].style.height = imgW+'px';
+            //     $hitImg[i].setAttribute('data',i);
+            //     $hitImg[i].onclick = function() {
+            //         bgm.play();
+            //         upBgm.play();
+            //         var data = this.getAttribute('data');
+            //         hah++;
+            //         if(data == rand && hah == 1){
+            //             console.log('觸及i:'+ data);
+            //             click(this)
+            //         }else{
+            //             console.log('無觸及i:');
+            //         }
+            //     }
+            // }
+            // startTimer = setInterval(function() {
+            //     if (startNumber > 1) {
+            //         startNumber--;
+            //         $startNumber.innerHTML = startNumber;
+            //     } else {        
+            //         clearInterval(startTimer);
+            //         $cover.style.display='none';
+            //         $start.style.display='none';
+            //         random_();
+            //         up();
+            //         progressTimer();
+            //     }
+            // },800);
+
+            $timeText.innerHTML = time + 's'; //顯示時間
+            $start.style.display = 'none';
+            $interface.style.display = 'block';
+            random_();
+            up();
+            progressTimer();
+        }
+        $starButton[0].addEventListener('click', function() {
+            imgs.audioBg.play();
+            star();
+        })
     }
-    window.onload = function () {
-      var imgs = {
-        star: "https://i.imgur.com/ZZR9GO4.png",
-        logo: "https://i.imgur.com/I1y95RC.png",
-        starBtn: "https://i.imgur.com/FLM8Tmy.png",
-        btnranking: "https://i.imgur.com/wkLcm1Z.png",
-        btnhome: "https://i.imgur.com/b0E8VNA.png",
-        bg: "https://i.imgur.com/nHyy31F.jpg",
-        Character: "https://i.imgur.com/GSEAjR7.png",
-      };
-      var sound = {
-        audioBg: "./source/game_music.mp3",
-        audioOver: "./source/game_over.mp3",
-        audioUp: "./source/bullet.mp3",
-      };
-
-      var objs = Object.assign(
-        Object.assign({}, imgs),
-        Object.assign({}, sound)
-      );
-      var imgLength = Object.keys(objs).length;
-      var objsOK = {};
-      var imgNumber = 0;
-      var load = document.querySelector(".load");
-      for (var k in objs) {
-        if (objs[k].match("img")) {
-          objsOK[k] = new Image();
-          objsOK[k].src = objs[k];
-          objsOK[k].addEventListener("load", loadFn, false);
-        } else {
-          objsOK[k] = new Audio();
-          // objsOK[k].preload = 'auto';
-          objsOK[k].src = objs[k];
-          objsOK[k].addEventListener("canplaythrough", loadFn, false);
-          // objsOK[k].load();
-          // objsOK[k].play();
+    window.onload = function() {
+        var imgs = {
+            'star': './img/star.svg',
+            'logo': './img/logo.svg',
+            'starBtn': './img/starBtn.svg',
+            'btnranking': './img/btnranking.svg',
+            'btnhome': './img/btnhome.svg',
+            'bg': './img/bg.svg',
+            'Character': './img/Character.svg'
+        };
+        var sound = {
+            'audioBg': './source/game_music.mp3',
+            'audioOver': './source/game_over.mp3',
+            'audioUp': './source/bullet.mp3'
         }
-      }
 
-      function loadFn() {
-        imgNumber++;
-        load.querySelector("h2").innerHTML =
-          parseInt((imgNumber / imgLength) * 100) - 1;
-        //資源加載完成
-        if (imgNumber == imgLength) {
-          //load page
-          load.style.display = "none";
-          starGame(objsOK);
+        var objs = Object.assign(Object.assign({}, imgs), Object.assign({}, sound));
+        var imgLength = Object.keys(objs).length;
+        var objsOK = {};
+        var imgNumber = 0;
+        var load = document.querySelector('.load')
+        for (var k in objs) {
+            if (objs[k].match('img')) {
+                objsOK[k] = new Image();
+                objsOK[k].src = objs[k];
+                objsOK[k].addEventListener('load', loadFn, false)
+            } else {
+                objsOK[k] = new Audio();
+                // objsOK[k].preload = 'auto';
+                objsOK[k].src = objs[k];
+                objsOK[k].addEventListener('canplaythrough', loadFn, false)
+                    // objsOK[k].load();
+                    // objsOK[k].play();
+            }
         }
-      }
-    };
-  </script>
+
+        function loadFn() {
+            imgNumber++;
+            load.querySelector('h2').innerHTML = parseInt((imgNumber / imgLength) * 100) - 1;
+            //資源加載完成
+            if (imgNumber == imgLength) {
+                //load page
+                load.style.display = 'none';
+                starGame(objsOK)
+            }
+        }
+    }
+</script>
+
 </html>
